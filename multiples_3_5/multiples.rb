@@ -17,11 +17,7 @@ class Multiple
   end
 
   def sumult
-    sum = 0
-    self.mults.each do |int|
-      sum += int
-    end
-    sum
+    self.mults.inject {|sum, int| sum + int}
   end
 
 end
