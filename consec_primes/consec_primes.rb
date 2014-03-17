@@ -6,22 +6,17 @@ class ConsecPrime
 
   def initialize(below)
     @below = below
-    @primes = []
+    @primes = [2]
   end
 
   def find_primes
-    if primes.length > 0
-      next_num = primes[-1] + 1
-      (next_num...below).each do |int|
-        if is_prime?(int)
-          result = int
-          break
-        end
+    next_num = primes[-1] + 1
+    (next_num...below).each do |int|
+      if is_prime?(int)
+        primes << int
       end
-    else
-      result = 2
     end
-    primes << result
+    primes
   end
 
   def sum_primes
@@ -31,6 +26,7 @@ class ConsecPrime
   def is_prime?(num)
     is = true
     primes.each do |prime|
+      break if num <= prime
       if num%prime == 0
         is = false
         break
