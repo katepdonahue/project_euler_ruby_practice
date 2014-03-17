@@ -10,7 +10,7 @@ describe Multiple do
 
   describe '#sumult' do
     it "should sum all the multiples of 3 and 5 below 10" do
-
+      expect(Multiple.new(3, 5, 10).sumult).to eq(23)
     end
   end
 
