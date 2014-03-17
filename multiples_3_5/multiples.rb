@@ -17,7 +17,7 @@ class Multiple
   end
 
   def sumult
-    self.mults.inject {|sum, int| sum + int}
+    self.mults.inject(:+)
   end
 
 end
