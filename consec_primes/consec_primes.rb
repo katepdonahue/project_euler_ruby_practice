@@ -5,6 +5,13 @@ class ConsecPrime
     @below = below
     @primes = []
   end
-  
+
+  def find_prime
+
+  end
+
+  def sum_primes
+
+  end
 
 end
