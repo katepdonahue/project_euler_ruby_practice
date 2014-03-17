@@ -22,7 +22,7 @@ describe ConsecPrime do
     end
   end
 
-  describe "#check_primes" do
+  describe "#is_prime?" do
     it "should check if a given number is a prime" do
 
     end
