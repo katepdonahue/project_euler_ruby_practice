@@ -8,6 +8,10 @@ class Multiple
     @below = below
   end
 
+  def mults
+
+  end
+
   def sumult
 
   end
