@@ -1,5 +1,8 @@
+require 'debugger'
+
 class ConsecPrime
-  attr_reader :below, :primes
+  attr_reader :below
+  attr_accessor :primes
 
   def initialize(below)
     @below = below
@@ -26,14 +29,14 @@ class ConsecPrime
   end
 
   def is_prime?(num)
-    is_it = true
+    is = true
     primes.each do |prime|
       if num%prime == 0
-        is_it = false
+        is = false
         break
       end
     end
-    is_it
+    is
   end
 
 end

@@ -24,10 +24,12 @@ describe ConsecPrime do
 
   describe "#is_prime?" do
     it "should return true if a given number is a prime" do
-      expect(my_cutoff.is_prime?(41)).to eq(true)
+      my_cutoff.primes = [2]
+      expect(my_cutoff.is_prime?(3)).to eq(true)
     end
     it "should return false if a given number is not a prime" do
-      expect(my_cutoff.is_prime?(40)).to eq(false)
+      my_cutoff.primes = [2, 3, 5, 7]
+      expect(my_cutoff.is_prime?(8)).to eq(false)
     end
   end
 
