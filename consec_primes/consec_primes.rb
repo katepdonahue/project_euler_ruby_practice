@@ -9,7 +9,7 @@ class ConsecPrime
     @primes = []
   end
 
-  def find_prime
+  def find_primes
     if primes.length > 0
       next_num = primes[-1] + 1
       (next_num...below).each do |int|

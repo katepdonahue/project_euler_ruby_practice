@@ -1,18 +1,11 @@
 require "./consec_primes"
 
 describe ConsecPrime do
-  my_cutoff = ConsecPrime.new(100)
+  cutoff = ConsecPrime.new(15)
   
-  describe "#find_prime" do
-
-    it "it should find the next prime up and add it to primes array" do
-      expect(my_cutoff.find_prime).to eq([2])
-    end
-    it "it should find the next prime up and add it to primes array" do
-      expect(my_cutoff.find_prime).to eq([2, 3])
-    end
-    it "it should find the next prime up and add it to primes array" do
-      expect(my_cutoff.find_prime).to eq([2, 3, 5])
+  describe "#find_primes" do
+    it "it should find the primes below your number" do
+      expect(cutoff.find_primes).to eq([2, 3, 5, 7, 11, 13])
     end
   end
 
@@ -24,12 +17,10 @@ describe ConsecPrime do
 
   describe "#is_prime?" do
     it "should return true if a given number is a prime" do
-      my_cutoff.primes = [2]
-      expect(my_cutoff.is_prime?(3)).to eq(true)
+      expect(cutoff.is_prime?(3)).to eq(true)
     end
     it "should return false if a given number is not a prime" do
-      my_cutoff.primes = [2, 3, 5, 7]
-      expect(my_cutoff.is_prime?(8)).to eq(false)
+      expect(cutoff.is_prime?(16)).to eq(false)
     end
   end
 
