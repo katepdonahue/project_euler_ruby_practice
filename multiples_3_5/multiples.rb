@@ -17,7 +17,11 @@ class Multiple
   end
 
   def sumult
-
+    sum = 0
+    self.mults.each do |int|
+      sum += int
+    end
+    sum
   end
 
 end
