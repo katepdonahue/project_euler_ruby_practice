@@ -26,7 +26,14 @@ class ConsecPrime
   end
 
   def is_prime?(num)
-
+    is_it = true
+    primes.each do |prime|
+      if num%prime == 0
+        is_it = false
+        break
+      end
+    end
+    is_it
   end
 
 end
