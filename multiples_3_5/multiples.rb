@@ -9,11 +9,7 @@ class Multiple
   end
 
   def mults
-    multiples = []
-    (1...self.below).each do |int|
-      multiples << int if int%num1 == 0 || int%num2 == 0
-    end
-    multiples
+    (1...self.below).to_a.delete_if {|int| int%num1 != 0 && int%num2 != 0}
   end
 
   def sumult
