@@ -17,3 +17,6 @@ class Multiple
   end
 
 end
+
+# find the project euler answer
+puts Multiple.new(3, 5, 1000).sumult
