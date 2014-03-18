@@ -22,21 +22,17 @@ class ConsecPrime
   def sum_primes
     sum = 0
     best = 0
-    primes.each do |prime|
+    primes.detect do |prime|
       sum += prime
-      if sum >= cutoff
-        break
-      end
-      if self.is_prime?(sum)
-        best = sum
-      end
+      best = sum if is_prime?(sum) && sum < cutoff # second condition is just in case the last sum (the one that's too big) is prime
+      sum >= cutoff
     end
     best
   end
 
   def is_prime?(num)
     is = true
-    primes.each do |prime|
+    primes.detect do |prime|
       break if num <= prime
       if num%prime == 0
         is = false
@@ -47,3 +43,4 @@ class ConsecPrime
   end
 
 end
+
