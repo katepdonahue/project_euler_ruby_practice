@@ -20,7 +20,15 @@ class ConsecPrime
   end
 
   def sum_primes
-
+    sum = 0
+    best = 0
+    primes.each do |prime|
+      sum += prime
+      if self.is_prime?(sum)
+        best = sum
+      end
+    end
+    best
   end
 
   def is_prime?(num)

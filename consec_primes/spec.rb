@@ -11,6 +11,7 @@ describe ConsecPrime do
 
   describe "#sum_primes" do
     cutoff = ConsecPrime.new(100)  
+    cutoff.find_primes
     it "should sum the consecutive primes until it reaches your number, return the previous result" do
       expect(cutoff.sum_primes).to eq(41)
     end
