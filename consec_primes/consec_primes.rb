@@ -1,17 +1,17 @@
 require 'debugger'
 
 class ConsecPrime
-  attr_reader :below
+  attr_reader :cutoff
   attr_accessor :primes
 
-  def initialize(below)
-    @below = below
+  def initialize(cutoff)
+    @cutoff = cutoff
     @primes = [2]
   end
 
   def find_primes
     next_num = primes[-1] + 1
-    (next_num...below).each do |int|
+    (next_num...cutoff).each do |int|
       if is_prime?(int)
         primes << int
       end
