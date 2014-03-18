@@ -24,6 +24,9 @@ class ConsecPrime
     best = 0
     primes.each do |prime|
       sum += prime
+      if sum >= cutoff
+        break
+      end
       if self.is_prime?(sum)
         best = sum
       end
