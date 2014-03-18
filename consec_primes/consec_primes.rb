@@ -29,15 +29,10 @@ class ConsecPrime
   end
 
   def is_prime?(num)
-    is = true
-    primes.detect do |prime|
-      break if num <= prime
-      if num%prime == 0
-        is = false
-        break
-      end
+    primes.take_while{|prime| prime < num}.each do |prime|
+      return false if num%prime == 0
     end
-    is
+    true
   end
 
 end
