@@ -28,9 +28,7 @@ class HashTable
     bucket_array = buckets[get_bucket(k)]
     bucket_array ||= []
     bucket_array.each do |kv_array|
-      if kv_array[0] == k
-        return kv_array[1]
-      end
+      return kv_array[1] if kv_array[0] == k
     end
   end
 
