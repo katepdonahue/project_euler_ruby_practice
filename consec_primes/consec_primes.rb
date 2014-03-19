@@ -10,8 +10,7 @@ class ConsecPrime
   end
 
   def find_primes
-    next_num = primes[-1] + 1
-    (next_num...cutoff).each do |int|
+    (3...cutoff).step(2).each do |int|
       primes << int if is_prime?(int)
     end
     primes
@@ -36,4 +35,12 @@ class ConsecPrime
   end
 
 end
+
+my_num = ConsecPrime.new(1000000)
+my_num.find_primes
+puts "Found the primes"
+puts "There are #{my_num.primes.length} primes"
+puts "The longest sum of consecutive primes is: #{my_num.sum_primes}"
+
+
 
