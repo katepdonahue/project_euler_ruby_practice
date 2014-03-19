@@ -26,6 +26,7 @@ class HashTable
   end
 
   def get_bucket(key)
+    pretend_magic(key)%100
   end
 
   def pretend_magic(key) # this is a fake version of the magical hash table
