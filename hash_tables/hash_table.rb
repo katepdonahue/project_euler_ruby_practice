@@ -25,8 +25,12 @@ class HashTable
 
   end
 
+  def get_bucket
+
+  end
+
   def pretend_magic(key) # this is a fake version of the magical hash table
-    rand(100000)         # method that returns a unique random number for each input
+    key.to_sym.object_id # method that returns a unique random number for each input     
   end
 
 
