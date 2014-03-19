@@ -1,4 +1,4 @@
-require 'hash_table'
+require './hash_table'
 
 describe HashTable do
   my_hash = HashTable.new

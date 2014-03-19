@@ -11,22 +11,21 @@
 # so that we get the right value when there are duplicates in the same bucket
 
 class HashTable
-
+  attr_reader :buckets
 
   def initialize
+    @buckets = []
+  end
+
+  def get(k)
 
   end
 
-  def get
+  def set(k, v)
 
   end
 
-  def set
-
-  end
-
-  def get_bucket
-
+  def get_bucket(key)
   end
 
   def pretend_magic(key) # this is a fake version of the magical hash table
