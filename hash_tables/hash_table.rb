@@ -25,5 +25,9 @@ class HashTable
 
   end
 
+  def pretend_magic(key) # this is a fake version of the magical hash table
+    rand(100000)         # method that returns a unique random number for each input
+  end
+
 
 end
