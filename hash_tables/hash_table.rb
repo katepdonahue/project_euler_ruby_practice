@@ -17,11 +17,14 @@ class HashTable
     @buckets = []
   end
 
-  def get(k)
-
+  def set(k, v)
+    index = get_bucket(k)
+    buckets[index] ||= []
+    buckets[index] << [k, v]
+    return v
   end
 
-  def set(k, v)
+  def get(k)
 
   end
 
