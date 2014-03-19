@@ -25,7 +25,13 @@ class HashTable
   end
 
   def get(k)
-
+    bucket_array = buckets[get_bucket(k)]
+    bucket_array ||= []
+    bucket_array.each do |kv_array|
+      if kv_array[0] == k
+        return kv_array[1]
+      end
+    end
   end
 
   def get_bucket(key)
