@@ -1,3 +1,5 @@
+require 'debugger'
+
 class Stock
   attr_reader :stock_prices_yesterday
 
@@ -7,17 +9,13 @@ class Stock
 
   def best_profit
     low_price = stock_prices_yesterday.first
-    max_diff = 0
-    stock_prices_yesterday.each_with_index do |price1, mins1|
-      if price1 < low_price || mins1 == 0
-        stock_prices_yesterday[mins1+1..-1].each do |price2|
-          profit = price2 - price1
-          max_diff = profit if profit > max_diff
-        end
-        low_price = price1
-      end
+    max_profit = 0
+    stock_prices_yesterday[0...-1].each_with_index do |new_price, mins|
+      buy_price = [low_price, new_price].min
+      sell_price = stock_prices_yesterday[mins+1]
+      max_profit = [max_profit, (sell_price - buy_price)].max
     end
-    max_diff
+    max_profit
   end
 
 end
