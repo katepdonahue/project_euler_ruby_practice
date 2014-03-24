@@ -6,15 +6,17 @@ class Stock
   end
 
   def best_profit
-    # lowest = stock_prices_yesterday["1"]
-    # first, the slowest way
+    low_price = stock_prices_yesterday.first
     max_diff = 0
     stock_prices_yesterday.each_with_index do |price1, mins1|
-      stock_prices_yesterday[(mins1+1)..-1].each do |price2|
-        profit = price2 - price1
-        if profit > max_diff
-          max_diff = profit
+      if price1 <= low_price
+        stock_prices_yesterday[(mins1+1)..-1].each do |price2|
+          profit = price2 - price1
+          if profit > max_diff
+            max_diff = profit
+          end
         end
+        low_price = price1
       end
     end
     max_diff
