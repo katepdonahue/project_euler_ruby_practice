@@ -4,10 +4,10 @@ class Array
 
   def my_reverse
     last = self.length - 1
-    (0..last).each do |i|
-      self << self[last-i]
+    (0..last/2).each do |i|
+      self[i], self[last-i] = self.values_at(last-i, i)
     end
-    self[last+1..-1]
+    self
   end
 
 end
