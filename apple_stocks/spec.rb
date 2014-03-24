@@ -1,4 +1,4 @@
-require 'apple_stocks'
+require './apple_stocks'
 
 # I have an array stockPricesYesterday where the keys 
 # are the number of minutes into the day (starting with midnight) 
@@ -11,6 +11,16 @@ require 'apple_stocks'
 describe Stock do
 
   describe "#best_profit" do
+
+    it "should calculate the largest difference between two elements in the hash" do
+      stock_hash = {"0" => 500, "1" => 600, "2" => 700}
+      apple_stocks = Stock.new(stock_hash)
+      expect(apple_stocks.best_profit).to eq(200)
+    end
+
+    it "should not calculate a difference if the larger value comes earlier in the day" do
+
+    end
 
   end
 
