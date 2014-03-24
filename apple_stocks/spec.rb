@@ -13,7 +13,7 @@ describe Stock do
   describe "#best_profit" do
 
     it "should calculate the largest difference between two elements in the hash" do
-      stock_hash = {"0" => 500, "1" => 600, "2" => 700}
+      stock_hash = {"1" => 500, "2" => 600, "3" => 700}
       apple_stocks = Stock.new(stock_hash)
       expect(apple_stocks.best_profit).to eq(200)
     end
