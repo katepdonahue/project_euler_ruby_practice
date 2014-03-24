@@ -6,7 +6,7 @@ require './binary_sort'
 describe Array, '#binary_sort' do
   
   it "should sort correctly" do
-    expect(["a", "c", "o", "e", "z", "A"].binary_sort).to eq(["A", "a", "c", "e", "z", "o"])
+    expect(["a","o", "e", "z", "A"].binary_sort).to eq(["o", "z", "e", "a", "A"])
   end
 
 end
