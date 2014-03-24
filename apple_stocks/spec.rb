@@ -13,19 +13,19 @@ describe Stock do
   describe "#best_profit" do
 
     it "should calculate the largest difference between two elements in the hash" do
-      stock_hash = {"1" => 500, "2" => 600, "3" => 700}
+      stock_hash = [500, 600, 700]
       apple_stocks = Stock.new(stock_hash)
       expect(apple_stocks.best_profit).to eq(200)
     end
 
     it "should not calculate a difference if the larger value comes earlier in the day" do
-      stock_hash = {"1" => 700, "2" => 600, "3" => 650}
+      stock_hash = [700, 600, 650]
       apple_stocks = Stock.new(stock_hash)
       expect(apple_stocks.best_profit).to eq(50)
     end
 
     it "should return 0 if the stock is declining throughout the day" do
-      stock_hash = {"1" => 700, "2" => 600, "3" => 500}
+      stock_hash = [700, 600, 500]
       apple_stocks = Stock.new(stock_hash)
       expect(apple_stocks.best_profit).to eq(0)
     end
