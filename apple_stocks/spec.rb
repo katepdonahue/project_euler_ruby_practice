@@ -19,7 +19,15 @@ describe Stock do
     end
 
     it "should not calculate a difference if the larger value comes earlier in the day" do
+      stock_hash = {"1" => 700, "2" => 600, "3" => 650}
+      apple_stocks = Stock.new(stock_hash)
+      expect(apple_stocks.best_profit).to eq(50)
+    end
 
+    it "should return 0 if the stock is declining throughout the day" do
+      stock_hash = {"1" => 700, "2" => 600, "3" => 500}
+      apple_stocks = Stock.new(stock_hash)
+      expect(apple_stocks.best_profit).to eq(0)
     end
 
   end
