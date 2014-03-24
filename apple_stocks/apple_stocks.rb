@@ -10,7 +10,7 @@ class Stock
     # first, the slowest way
     max_diff = 0
     stock_prices_yesterday.each_with_index do |price1, mins1|
-      stock_prices_yesterday[(mins1+1)..-1].each_with_index do |price2, mins2|
+      stock_prices_yesterday[(mins1+1)..-1].each do |price2|
         profit = price2 - price1
         if profit > max_diff
           max_diff = profit
