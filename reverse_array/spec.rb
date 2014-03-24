@@ -14,9 +14,5 @@ describe Array, '#my_reverse' do
   it "should not break when array has only one element" do
     expect([0].my_reverse).to eq([0])
   end
-  it "should return nil when the array is nil" do
-    my_array = nil
-    expect(my_array.my_reverse).to eq(nil)
-  end
 
 end
