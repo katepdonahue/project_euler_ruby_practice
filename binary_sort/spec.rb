@@ -15,8 +15,12 @@ describe String, "#binary_ones" do
 
   it "should return the number of binary ones in the character's ascii" do
     expect("a".binary_ones).to eq(3)
+  end
+  it "should return the number of binary ones in the character's ascii" do
     expect("A".binary_ones).to eq(2)
-    expect("z".binary_ones).to eq(4)
+  end
+  it "should return the number of binary ones in the character's ascii" do
+    expect("z".binary_ones).to eq(5)
   end
 
 end
