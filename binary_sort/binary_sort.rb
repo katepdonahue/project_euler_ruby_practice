@@ -22,5 +22,9 @@ class String
     answer
   end
 
+  def cheat_ones
+    nums = self.unpack('b*')[0].split(//)
+    nums.inject{|num1, num2| num1.to_i + num2.to_i}
+  end
 
 end

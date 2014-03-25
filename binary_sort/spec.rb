@@ -14,13 +14,13 @@ end
 describe String, "#binary_ones" do
 
   it "should return the number of binary ones in the character's ascii" do
-    expect("a".binary_ones).to eq(3)
+    expect("a".cheat_ones).to eq(3)
   end
   it "should return the number of binary ones in the character's ascii" do
-    expect("A".binary_ones).to eq(2)
+    expect("A".cheat_ones).to eq(2)
   end
   it "should return the number of binary ones in the character's ascii" do
-    expect("z".binary_ones).to eq(5)
+    expect("z".cheat_ones).to eq(5)
   end
 
 end
