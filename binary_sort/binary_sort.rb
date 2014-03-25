@@ -21,3 +21,12 @@ class Array
   end
 
 end
+
+class String
+
+  def binary_ones
+
+  end
+
+
+end
